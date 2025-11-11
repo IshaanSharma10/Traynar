@@ -1,0 +1,1 @@
+- [x] Update import in ai/app/index.tsx from "react-native" to "nativewind" for View and Text components to resolve TypeScript error with className prop.
