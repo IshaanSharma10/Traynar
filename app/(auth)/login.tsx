@@ -27,7 +27,7 @@ export default function Login() {
         <Text className="text-base text-blue-500">Forgot Password?</Text>
       </TouchableOpacity>
 
-      <Button title="Continue" onPress={() => router.push("/(main)/home")} />
+      <Button title="Continue" onPress={() => router.push("/home")} />
 
       <View className="my-8 flex-row items-center justify-center">
         <View className="h-px bg-gray-200 flex-1" />

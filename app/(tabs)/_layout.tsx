@@ -1,24 +1,64 @@
 import { Tabs } from "expo-router";
-import { Home, Bell, User, Mic } from "lucide-react-native";
+import { Home, Bell, User, Mic,BarChart3 } from "lucide-react-native";
+import { View } from "react-native";
 
 export default function TabsLayout() {
   return (
-    <Tabs screenOptions={{ headerShown: false, tabBarActiveTintColor: "#2563EB" }}>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: "#2563EB",
+        tabBarStyle: {
+          position: "absolute",
+                       // 👈 moves it up slightly
+          left: 20,
+          right: 20,
+          height: 65,
+          borderRadius: 25,        // 👈 rounded corners
+          paddingBottom: 6,
+          backgroundColor: "white",
+          shadowColor: "#000",
+          shadowOpacity: 0.1,
+          shadowOffset: { width: 0, height: 2 },
+          shadowRadius: 6,
+          elevation: 6,
+        },
+      }}
+    >
       <Tabs.Screen
         name="home"
-        options={{ title: "Home", tabBarIcon: ({ color }) => <Home color={color} /> }}
+        options={{
+          title: "Home",
+          tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
+        }}
       />
       <Tabs.Screen
         name="new-recording"
-        options={{ title: "Record", tabBarIcon: ({ color }) => <Mic color={color} /> }}
+        options={{
+          title: "Record",
+          tabBarIcon: ({ color, size }) => <Mic color={color} size={size} />,
+        }}
       />
       <Tabs.Screen
         name="notifications"
-        options={{ title: "Notifications", tabBarIcon: ({ color }) => <Bell color={color} /> }}
+        options={{
+          title: "Notifications",
+          tabBarIcon: ({ color, size }) => <Bell color={color} size={size} />,
+        }}
       />
       <Tabs.Screen
         name="profile"
-        options={{ title: "Profile", tabBarIcon: ({ color }) => <User color={color} /> }}
+        options={{
+          title: "Profile",
+          tabBarIcon: ({ color, size }) => <User color={color} size={size} />,
+        }}
+      />
+      <Tabs.Screen
+        name="evaluation-result"
+        options={{
+          title: "Insights",
+          tabBarIcon: ({ color, size }) => <BarChart3 color={color} size={size} />,
+        }}
       />
     </Tabs>
   );
