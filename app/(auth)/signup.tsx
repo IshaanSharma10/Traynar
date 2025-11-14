@@ -51,7 +51,7 @@ export default function SignUp() {
       }`;
 
       const url =
-        "http://server.eba-rptzmmzd.us-east-1.elasticbeanstalk.com/auth/signup";
+        "http://server.eba-rptzmmzd.us-east-1.elasticbeanstalk.com/auth/auth/signup";
 
       console.log("URL:", url);
       console.log("Request Body (Ordered):", orderedBody);
@@ -60,7 +60,7 @@ export default function SignUp() {
       const timeout = setTimeout(() => {
         controller.abort();
         console.log("API TIMEOUT");
-      }, 12000);
+      }, 120000);
 
       const response = await fetch(url, {
         method: "POST",
