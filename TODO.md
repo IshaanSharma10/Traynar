@@ -1,0 +1,5 @@
+- [x] Update import in ai/app/index.tsx from "react-native" to "nativewind" for View and Text components to resolve TypeScript error with className prop.
+- [x] Install lucide-react-native library
+- [x] Verify installation by checking package.json
+- [x] Run the app to ensure no errors
+- [x] Fix bottom navigation bar visibility throughout the app by adding pb-24 to ScrollViews in main screens
