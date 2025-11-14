@@ -77,7 +77,6 @@ export default function NotificationsScreen() {
     <>
       <StatusBar barStyle="dark-content" />
       
-      {/* Header */}
       <MotiView
         from={{ opacity: 0, translateY: -20 }}
         animate={{ opacity: 1, translateY: 0 }}
