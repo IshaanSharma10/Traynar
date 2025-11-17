@@ -10,10 +10,11 @@ export default function TabsLayout() {
         tabBarActiveTintColor: "#2563EB",
         tabBarStyle: {
           position: "absolute",
+                       // 👈 moves it up slightly
           left: 20,
           right: 20,
           height: 65,
-          borderRadius: 25,
+          borderRadius: 25,        // 👈 rounded corners
           paddingBottom: 6,
           backgroundColor: "white",
           shadowColor: "#000",

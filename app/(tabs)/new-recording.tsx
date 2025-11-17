@@ -29,6 +29,8 @@ export default function RecordingScreen() {
   return (
     <>
       <StatusBar barStyle="dark-content" />
+      
+      {/* Header */}
       <MotiView
         from={{ opacity: 0, translateY: -20 }}
         animate={{ opacity: 1, translateY: 0 }}
@@ -61,6 +63,7 @@ export default function RecordingScreen() {
             {formatTime(time)}
           </MotiText>
 
+          {/* Waveform Visualization */}
           <MotiView
             from={{ opacity: 0 }}
             animate={{ opacity: isRecording ? 1 : 0.3 }}
@@ -96,6 +99,7 @@ export default function RecordingScreen() {
           </Text>
         </MotiView>
 
+        {/* Bottom Actions */}
         <View className="absolute bottom-12 left-0 right-0 items-center">
           <View className="flex-row items-center justify-center" style={{ gap: 32 }}>
             <MotiView

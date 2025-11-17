@@ -23,6 +23,7 @@ export default function HomeScreen() {
     <>
       <StatusBar barStyle="dark-content" />
       <ScrollView className="flex-1 bg-gray-50 px-4">
+        {/* Header */}
         <MotiView 
           from={{ opacity: 0, translateY: -20 }}
           animate={{ opacity: 1, translateY: 0 }}
@@ -48,6 +49,7 @@ export default function HomeScreen() {
           </View>
         </MotiView>
 
+        {/* Start New Session Card */}
         <MotiView
           from={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -69,6 +71,7 @@ export default function HomeScreen() {
           </TouchableOpacity>
         </MotiView>
 
+        {/* Performance Trends */}
         <MotiView
           from={{ opacity: 0, translateX: -20 }}
           animate={{ opacity: 1, translateX: 0 }}
@@ -82,6 +85,7 @@ export default function HomeScreen() {
             </TouchableOpacity>
           </View>
           
+          {/* Chart */}
           <View className="h-40 bg-gray-50 rounded-xl p-4 mb-3">
             <View className="flex-1 flex-row items-end justify-between">
               {heights.map((height, i) => (
@@ -105,6 +109,7 @@ export default function HomeScreen() {
             </View>
           </View>
 
+          {/* Legend */}
           <View className="flex-row justify-around">
             <View className="flex-row items-center">
               <View className="w-3 h-3 bg-blue-500 rounded-sm mr-2" />
@@ -121,6 +126,7 @@ export default function HomeScreen() {
           </View>
         </MotiView>
 
+        {/* Latest Evaluations */}
         <MotiView
           from={{ opacity: 0, translateX: -20 }}
           animate={{ opacity: 1, translateX: 0 }}

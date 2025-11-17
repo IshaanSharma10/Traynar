@@ -68,6 +68,7 @@ export default function ProfileScreen() {
     <>
       <StatusBar barStyle="dark-content" />
       
+      {/* Header */}
       <MotiView
         from={{ opacity: 0, translateY: -20 }}
         animate={{ opacity: 1, translateY: 0 }}
@@ -82,6 +83,7 @@ export default function ProfileScreen() {
       </MotiView>
 
       <ScrollView className="flex-1 bg-gray-50 px-4">
+        {/* Profile Card */}
         <MotiView
           from={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -99,9 +101,11 @@ export default function ProfileScreen() {
           </View>
         </MotiView>
 
+        {/* Account Settings */}
         <Text className="text-gray-400 text-xs font-semibold mb-3 px-1">ACCOUNT SETTINGS</Text>
         {accountSettings.map((item, idx) => renderMenuItem(item, idx, 400 + idx * 100))}
 
+        {/* Subscription */}
         <Text className="text-gray-400 text-xs font-semibold mb-3 mt-6 px-1">SUBSCRIPTION</Text>
         <MotiView
           from={{ opacity: 0, translateX: -20 }}
@@ -120,9 +124,11 @@ export default function ProfileScreen() {
         
         {subscriptionItems.map((item, idx) => renderMenuItem(item, idx, 800))}
 
+        {/* General */}
         <Text className="text-gray-400 text-xs font-semibold mb-3 mt-6 px-1">GENERAL</Text>
         {generalItems.map((item, idx) => renderMenuItem(item, idx, 900 + idx * 100))}
 
+        {/* Log Out */}
         <MotiView
           from={{ opacity: 0, translateX: -20 }}
           animate={{ opacity: 1, translateX: 0 }}
