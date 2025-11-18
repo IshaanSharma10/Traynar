@@ -1,6 +1,5 @@
 import { Tabs } from "expo-router";
-import { Home, Bell, User, Mic,BarChart3 } from "lucide-react-native";
-import { View } from "react-native";
+import { BarChart3, Bell, Home, Mic, User } from "lucide-react-native";
 
 export default function TabsLayout() {
   return (
@@ -13,8 +12,6 @@ export default function TabsLayout() {
           left: 20,
           right: 20,
           height: 65,
-          borderRadius: 25,
-          paddingBottom: 6,
           backgroundColor: "white",
           shadowColor: "#000",
           shadowOpacity: 0.1,
