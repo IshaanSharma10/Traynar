@@ -1,8 +1,9 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView, StatusBar, ViewStyle } from 'react-native';
-import { MotiView } from 'moti';
 import { Feather } from '@expo/vector-icons';
 import { router } from 'expo-router';
+import { MotiView } from 'moti';
+import React from 'react';
+import { ScrollView, StatusBar, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface Session {
   name: string;
@@ -11,6 +12,8 @@ interface Session {
 }
 
 export default function HomeScreen() {
+  const insets = useSafeAreaInsets();
+  
   const sessions: Session[] = [
     { name: 'J. Doe', date: 'April 15, 2026', scores: [92, 88, 95] },
     { name: 'A. Smith', date: 'April 12, 2026', scores: [85, 91, 89] }
@@ -22,7 +25,11 @@ export default function HomeScreen() {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <ScrollView className="flex-1 bg-gray-50 px-4">
+      <ScrollView 
+        className="flex-1 bg-gray-50 px-4"
+        contentContainerStyle={{ paddingBottom: insets.bottom + 20 }}
+        showsVerticalScrollIndicator={false}
+      >
         <MotiView 
           from={{ opacity: 0, translateY: -20 }}
           animate={{ opacity: 1, translateY: 0 }}

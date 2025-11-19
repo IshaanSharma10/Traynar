@@ -1,4 +1,5 @@
 import { Feather } from '@expo/vector-icons';
+import { BlurView } from 'expo-blur';
 import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
@@ -225,7 +226,7 @@ export default function CoachingScreen() {
           />
         </Svg>
         <View className="absolute items-center">
-          <Text className="text-6xl font-bold text-gray-900">{score}/{maxScore}</Text>
+          <Text className="text-4xl font-bold text-gray-900">{score}/{maxScore}</Text>
           <Text className="text-gray-600 text-lg mt-1">{percentage}%</Text>
         </View>
       </View>
@@ -243,6 +244,7 @@ export default function CoachingScreen() {
   };
 
   const handleViewSummary = () => {
+    console.log('View Summary clicked');
     setCurrentPage('summary');
   };
 
@@ -298,7 +300,8 @@ export default function CoachingScreen() {
 
         <ScrollView
           className="flex-1 bg-gradient-to-b from-teal-50 to-cyan-50"
-          contentContainerStyle={{ paddingBottom: insets.bottom + 40 }}
+          contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}
+          showsVerticalScrollIndicator={false}
         >
           <View className="items-center pt-6 pb-4">
             <Text className="text-teal-700 font-semibold text-lg">Key Takeaways</Text>
@@ -399,6 +402,7 @@ export default function CoachingScreen() {
         <ScrollView
           className="flex-1 bg-gray-50"
           contentContainerStyle={{ paddingBottom: insets.bottom + 120 }}
+          showsVerticalScrollIndicator={false}
         >
           <View className="p-4">
             {/* Score Card */}
@@ -512,7 +516,8 @@ export default function CoachingScreen() {
 
       <ScrollView
         className="flex-1 bg-gray-50"
-        contentContainerStyle={{ paddingBottom: insets.bottom + 40 }}
+        contentContainerStyle={{ paddingBottom: insets.bottom + 100 }}
+        showsVerticalScrollIndicator={false}
       >
         <View className="p-4">
           {/* Score Overview Card */}
@@ -572,18 +577,36 @@ export default function CoachingScreen() {
           </View>
 
           {/* View Summary Button */}
-          <TouchableOpacity
-            onPress={handleViewSummary}
-            className="bg-gradient-to-r from-teal-600 to-cyan-600 py-4 rounded-2xl shadow-lg mb-4"
-          >
-            <View className="flex-row items-center justify-center">
-              <Feather name="zap" size={22} color="white" />
-              <Text className="text-white font-bold text-lg ml-3">View Summary</Text>
-            </View>
-            <Text className="text-white/90 text-center text-sm mt-2">
-              Get a high-level recap of your performance
-            </Text>
-          </TouchableOpacity>
+         <TouchableOpacity onPress={handleViewSummary} activeOpacity={0.8}>
+  <BlurView
+    intensity={40}
+    tint="light"
+    style={{
+      paddingVertical: 18,
+      borderRadius: 20,
+      marginBottom: 20,
+      backgroundColor: 'rgba(255,255,255,0.25)',
+      borderWidth: 1,
+      borderColor: 'rgba(255,255,255,0.3)',
+      shadowColor: '#000',
+      shadowOpacity: 0.1,
+      shadowOffset: { width: 0, height: 6 },
+      shadowRadius: 12,
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+  >
+    <View className="flex-row items-center justify-center">
+      <Feather name="zap" size={22} color="#0D9488" />
+      <Text className="text-teal-700 font-semibold text-lg ml-3">
+        View Summary
+      </Text>
+    </View>
+    <Text className="text-gray-600 text-center text-sm mt-2">
+      Get a high-level recap of your performance
+    </Text>
+  </BlurView>
+</TouchableOpacity>
         </View>
       </ScrollView>
     </>

@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { BarChart3, Bell, Home, Mic, User } from "lucide-react-native";
+import { BarChart3, GraduationCap, Home, Mic } from "lucide-react-native";
 
 export default function TabsLayout() {
   return (
@@ -28,6 +28,7 @@ export default function TabsLayout() {
           tabBarIcon: ({ color, size }) => <Home color={color} size={size} />,
         }}
       />
+
       <Tabs.Screen
         name="new-recording"
         options={{
@@ -35,25 +36,24 @@ export default function TabsLayout() {
           tabBarIcon: ({ color, size }) => <Mic color={color} size={size} />,
         }}
       />
+
       <Tabs.Screen
-        name="notifications"
+        name="lms"
         options={{
-          title: "Notifications",
-          tabBarIcon: ({ color, size }) => <Bell color={color} size={size} />,
+          title: "Learn",
+          tabBarIcon: ({ color, size }) => (
+            <GraduationCap color={color} size={size} />
+          ),
         }}
       />
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Profile",
-          tabBarIcon: ({ color, size }) => <User color={color} size={size} />,
-        }}
-      />
+
       <Tabs.Screen
         name="evaluation-result"
         options={{
           title: "Insights",
-          tabBarIcon: ({ color, size }) => <BarChart3 color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => (
+            <BarChart3 color={color} size={size} />
+          ),
         }}
       />
     </Tabs>
